@@ -23,7 +23,7 @@ export default function Post({ postData }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = await getAllPostIds()
   return {
     paths,
     fallback: false //404を返す trueの場合用意していた指定のページに飛ばす
