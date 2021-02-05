@@ -5,6 +5,9 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faGithub, faTwitter} from '@fortawesome/free-brands-svg-icons'
+
 
 export const getStaticProps: GetStaticProps = async() => {
   const allPostsData = getSortedPostsData();
@@ -37,11 +40,15 @@ export default function Home({ allPostsData } : Props) {
         <p>好きな映画： ボヘミアン・ラプソディ</p>
         <p>好きな本 ： 嫌われる勇気</p>
         <p>座右の銘 ： 朱に交われば赤くなる</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
       </section>
+      <div className={utilStyles.iconsList}>
+        <Link href="https://twitter.com/tamo38570240">
+            <FontAwesomeIcon icon={faTwitter} color="#1DA1F2" className={utilStyles.icon} />
+        </Link>
+        <Link href="https://github.com/tamaki8021">
+            <FontAwesomeIcon icon={faGithub}  className={utilStyles.icon} />
+        </Link>
+      </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>

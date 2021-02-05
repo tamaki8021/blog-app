@@ -4,7 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Tamaki  Hibiki";
-export const siteTitle = "Introduction";
+export const siteTitle = "Tamaki profile";
 
 export default function Layout({
   children,
