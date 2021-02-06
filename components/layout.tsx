@@ -3,6 +3,8 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import {data} from './path.module'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons'
 
 const name = "Tamaki  Hibiki";
 export const siteTitle = "Tamaki profile";
@@ -55,11 +57,26 @@ export default function Layout({
           </>
         ) : (
           <>
-            <h2 className={utilStyles.headingLg}>
+            <svg viewBox="0 0 960 300" className={styles.svgSub}>
+              <symbol id="s-text">
+                <Link href="/">
+                  <a><text text-anchor="middle" x="50%" y="80%">TAMAKI.ME</text></a>
+                </Link>
+              </symbol>
+
+              <g className = "g-ants">
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+              </g>
+            </svg>
+            {/* <h2 className={utilStyles.headingLg}>
               <Link href="/">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
-            </h2>
+            </h2> */}
           </>
         )}
       </header>
