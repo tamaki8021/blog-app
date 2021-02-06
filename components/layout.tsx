@@ -2,6 +2,9 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import {data} from './path.module'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons'
 
 const name = "Tamaki  Hibiki";
 export const siteTitle = "Tamaki profile";
@@ -35,27 +38,45 @@ export default function Layout({
           <>
             <img
               src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              className={`${styles.headerHomeImage} ${utilStyles.borderCircle} ${styles.topImage}`}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={`${utilStyles.heading2Xl} ${styles.headerText}`} >{name}</h1>
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="960.000000pt"
+              height="579.000000pt"
+              viewBox="0 0 960.000000 579.000000"
+              preserveAspectRatio="xMidYMid meet"
+              className={styles.svg}
+            >
+              <path
+                d={data} className={styles.path}/>
+            </svg>
           </>
         ) : (
           <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            <svg viewBox="0 0 960 300" className={styles.svgSub}>
+              <symbol id="s-text">
+                <Link href="/">
+                  <a><text text-anchor="middle" x="50%" y="80%">TAMAKI.ME</text></a>
+                </Link>
+              </symbol>
+
+              <g className = "g-ants">
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+                  <use href="#s-text" className={styles.textCopy}></use>
+              </g>
+            </svg>
+            {/* <h2 className={utilStyles.headingLg}>
               <Link href="/">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
-            </h2>
+            </h2> */}
           </>
         )}
       </header>
@@ -67,6 +88,9 @@ export default function Layout({
           </Link>
         </div>
       )}
+      <footer>
+        <p className={styles.footerText}>&copy 2021 - tamaki</p>
+      </footer>
     </div>
   );
 }
