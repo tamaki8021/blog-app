@@ -43,12 +43,14 @@ export default function Home({ allPostsData } : Props) {
         <p>座右の銘 ： 朱に交われば赤くなる</p>
       </section>
       <div className={utilStyles.iconsList}>
-        <Link href="https://twitter.com/tamo38570240">
-            <FontAwesomeIcon icon={faTwitter} color="#1DA1F2" className={utilStyles.icon} />
-        </Link>
-        <Link href="https://github.com/tamaki8021">
-            <FontAwesomeIcon icon={faGithub}  className={utilStyles.icon} />
-        </Link>
+        <a href="https://twitter.com/tamo38570240" className={utilStyles.icon} target='_blank' >
+            <FontAwesomeIcon icon={faTwitter} color="#1DA1F2" className={`${utilStyles.iconI} ${utilStyles.iconTwitter}`} />
+            <span className={utilStyles.twitterSpan}></span>
+        </a>
+        <a href="https://github.com/tamaki8021"  className={utilStyles.icon} target='_blank' >
+            <FontAwesomeIcon icon={faGithub} color="#333" className={`${utilStyles.iconI} ${utilStyles.iconGithub}`} />
+            <span className={utilStyles.githubSpan}></span>
+        </a>
       </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`} >
           <h2 className={`${utilStyles.headingLg} ${animationStyles.btn}`}>web-log</h2>
