@@ -62,14 +62,14 @@
 
 .headerText {
   position: absolute;
-  top: 50%;
+  top: 34%;
   font-family: 'Oswald', 'sans-serif';
   z-index: 2;
 }
 
 .topImage {
   position: absolute;
-  top: 25%;
+  top: 17%;
   z-index: 2; 
 }
 
