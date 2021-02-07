@@ -37,6 +37,14 @@
   padding-top: 1px;
 }
 
+.text {
+  font-size: 18px;
+}
+
+.moduleSpacer {
+  height: 30px;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -123,4 +131,90 @@
 .icon:hover .iconTwitter,
 .icon:hover .iconGithub {
   color: white;
+}
+
+.grad {
+  display: flex;
+  justify-content: center;
+}
+
+.gradBtn {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+  text-align: center;
+  display: block;
+}
+.gradBtn::after,
+.gradBtn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+
+.gradBtn::after {
+  bottom: 0;
+  right: 30%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #435a6b;
+  border-right-color: #435a6b;
+}
+
+.gradBtn::before {
+  top: 0;
+  left: 30%;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #435a6b;
+  border-left-color: #435a6b;
+}
+
+.gradBtn:hover::after,
+.gradBtn:hover::before {
+  border-bottom-color: #435a6b;
+  border-right-color: #435a6b;
+  border-top-color: #435a6b;
+  border-left-color: #435a6b;
+  width: 40%;
+  height: 100%;
+}
+
+.gradItem {
+  position: relative;
+  overflow: hidden;
+  height: 20px; /*隠した状態の高さ*/
+}
+.gradItem::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /*グラデーションで隠す高さ*/
+  /* background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%); */
+  content: "";
+}
+.gradTrigger {
+  display: none; /*チェックボックスは常に非表示*/
+}
+.gradTrigger:checked + .gradBtn {
+  display: none; /*チェックされていたら、grad-btnを非表示にする*/
+}
+.gradTrigger:checked ~ .gradItem {
+  height: auto; /*チェックされていたら、高さを戻す*/
+}
+.gradTrigger:checked ~ .gradItem::before {
+  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
 }
