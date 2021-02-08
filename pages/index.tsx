@@ -35,7 +35,8 @@ export default function Home({ allPostsData }: Props) {
       <section className={utilStyles.headingMd}>
         <div className={utilStyles.moduleSpacer}></div>
         <p className={utilStyles.text}>
-          経済学部、経営学科の玉城響です。<br></br>
+          プログラミングサークル「もくプロ」の代表をしている経済学部経営学科の玉城響です。<br></br>
+          <br></br>
           基本的に自分の世界を持っており、その中で色々と考えている人です。それと「ダメ」と言われればやりたくなるし、「やってもいいよ！」と言われるとやりたくなくなってしまうような、どうしても正反対のことをしたくなってしまう天の邪鬼な性格も持ち合わせています。
         </p>
           <input
